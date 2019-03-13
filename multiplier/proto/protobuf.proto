@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package multiplier;
+
+service MultipleService{
+    rpc Multiply (MultRequest) returns (MultResponse);
+}
+
+message MultRequest{
+    int32 fnum=1;
+    int32 snum=2;
+}
+
+message MultResponse{
+    int32 mul_result=1;
+}
