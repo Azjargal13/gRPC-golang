@@ -21,6 +21,7 @@ func (*server) Multiply(ctx context.Context, req *multiplier.MultRequest) (*mult
 	res := &multiplier.MultResponse{
 		MulResult: mult,
 	}
+	log.Printf("Received numbers: %v, %v", fnum, snum)
 	return res, nil
 }
 func main() {
@@ -33,4 +34,5 @@ func main() {
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve: %v", err)
 	}
+
 }
