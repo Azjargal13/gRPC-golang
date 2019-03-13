@@ -4,6 +4,7 @@ package calculator;
 
 service CalculatorService{
     rpc Sum (SumRequest) returns (SumResponse){};
+    rpc PrimeNumberDecomposition (PrimeNumberDecompositionRequest) returns (stream PrimeNumberDecompositionResponse){};
 }
 message SumRequest{
     int32 f_num=1;
@@ -12,4 +13,10 @@ message SumRequest{
 
 message SumResponse{
     int32 sum_res=1;
+}
+message PrimeNumberDecompositionRequest{
+    int32 number=1;
+}
+message PrimeNumberDecompositionResponse{
+    int64 primefactor=1;
 }
