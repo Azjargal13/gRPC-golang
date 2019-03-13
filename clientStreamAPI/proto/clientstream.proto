@@ -1,0 +1,17 @@
+syntax="proto3";
+package clientstream;
+
+service LongGreet{
+    rpc LongManyGreet (stream LongManyGreetRequest) returns (LongManyGreetResponse){};
+}
+
+message Greeting{
+    string firstname=1;
+    string lastname=2;
+}
+message LongManyGreetRequest{
+    Greeting greeting =1;
+}
+message LongManyGreetResponse{
+    string result=1;
+}
